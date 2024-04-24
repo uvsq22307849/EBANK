@@ -60,7 +60,7 @@ const Register = () => {
 
     // Requête HTTP pour l'inscription
     axios
-      .post('https://ebank-api.vercel.app/auth/register', data)
+      .post('http://localhost:5555/auth/register', data)
       .then(() => {
         // En cas de succès, afficher une notification et rediriger vers la page de connexion
         enqueueSnackbar('Utilisateur créé avec succès', { variant: 'success' });
