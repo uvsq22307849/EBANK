@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 //app.use(cors());
 app.use(cors({
-    origin: ["https://vercel.com/boualis-projects/ebank-api", "http://localhost:5555", "http://localhost:5173"],
+    origin: ["https://ebank-api.vercel.app", "http://localhost:5555", "http://localhost:5173"],
     methods: ["POST", "GET", "PATCH","PUT"],
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
