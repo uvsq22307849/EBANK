@@ -1,5 +1,3 @@
-import { faClock, faPhone } from '@fortawesome/free-solid-svg-icons'; // Import des icônes
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import de FontAwesomeIcon pour les icônes
 import axios from 'axios'; // Import d'axios pour les requêtes HTTP
 import { format } from "date-fns"; // Import de format pour formater la date
 import React, { useEffect, useState } from 'react'; // Import de React et useEffect pour les effets et useState pour gérer les états
@@ -96,15 +94,9 @@ const Solde = () => {
   // Retourner le contenu du composant
   return (
     <div>
-      <div>
-        <div className="work-hours">
-          <FontAwesomeIcon icon={faClock} />
-          <span>Lundi/Vendredi 09:00-18:00</span>
-          <FontAwesomeIcon icon={faPhone} />
-          <span>01321009</span>
-        </div>
-      </div>
+      
       <header className="navbar">
+
         <nav>
           <ul>
             <Logout /> {/* Bouton de déconnexion */}

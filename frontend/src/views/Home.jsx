@@ -30,7 +30,7 @@ const Home = ({ destination = '/' }) => {
               <li><a href="#">Découvrir</a></li>
               <li><a href="#">Nos Services</a></li>
               <li><a href="#">Nous Contacter</a></li>
-              <li class="nav-item"><Link to="/login" className="filled-button"> Déja Client </Link></li>
+              <li className="nav-item"><Link to="/login" className="filled-button"> Déja Client </Link></li>
             </ul>
           </nav>
         </header>
