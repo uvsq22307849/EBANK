@@ -27,7 +27,7 @@ const Home = () => {
               <li><a href="#">Découvrir</a></li>
               <li><a href="#">Nos Services</a></li>
               <li><a href="#">Nous Contacter</a></li>
-              <li class="nav-item"><a href="https://ebank-beta.vercel.app/login" class="filled-button">Déja Client</a></li>
+              <li class="nav-item"><a href="/login" class="filled-button">Déja Client</a></li>
             </ul>
           </nav>
         </header>
@@ -35,7 +35,7 @@ const Home = () => {
         <div className="background-image">
           <div className="text-container">
             <h2>La rapidité à portée de clic avec E-Bank</h2>
-              <a href="https://ebank-beta.vercel.app/register" className="filled-button">Devenir client</a>
+              <a href="/register" className="filled-button">Devenir client</a>
           </div>
         </div>
       <br></br>
