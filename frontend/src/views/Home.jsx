@@ -1,6 +1,7 @@
 import { faClock, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from "react";
+import { Link } from 'react-router-dom';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import '../App.css';
@@ -27,7 +28,7 @@ const Home = () => {
               <li><a href="#">Découvrir</a></li>
               <li><a href="#">Nos Services</a></li>
               <li><a href="#">Nous Contacter</a></li>
-              <li class="nav-item"><a href="/login" class="filled-button">Déja Client</a></li>
+              <li class="nav-item"><Link to="/login" className="filled-button"> Déja Client </Link></li>
             </ul>
           </nav>
         </header>

@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import de F
 import axios from 'axios'; // Import d'axios pour les requêtes HTTP
 import { useSnackbar } from 'notistack'; // Import de useSnackbar pour afficher des messages d'alerte
 import React, { useState } from 'react'; // Import de React et useState pour les états
-import { useNavigate } from 'react-router-dom'; // Import de useNavigate pour la navigation
+import { Link, useNavigate } from 'react-router-dom'; // Import de useNavigate pour la navigation
 import 'slick-carousel/slick/slick-theme.css'; // Import du style du carrousel
 import 'slick-carousel/slick/slick.css'; // Import du style du carrousel
 import '../../App.css'; // Import du style global de l'application
 
 // Composant Login
-const Login = () => {
+const Login = ({ destination = 'login' }) => {
     const [email, setEmail] = useState(''); // État pour stocker l'e-mail
     const [password, setPassword] = useState(''); // État pour stocker le mot de passe
     const navigate = useNavigate(); // Fonction de navigation
@@ -43,6 +43,9 @@ const Login = () => {
 
     return (
         <div>
+            <Link
+        to={destination}
+      ></Link>
             <div>
                 <div className="work-hours">
                     <FontAwesomeIcon icon={faClock} />
