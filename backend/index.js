@@ -42,7 +42,7 @@ app.get('/', (request, response) => {
 app.use('/auth', authRouter);
 
 // Routes utilisateur
-//app.use('/user', userRouter);
+app.use('/user', userRouter);
 
 // Routes bénéficiaire
 app.use('/beneficiaire', benefRouter);
