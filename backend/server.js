@@ -23,9 +23,9 @@ const app = express();
 app.use(express.json());
 
 // Route principale avec un message de bienvenue
-app.get('/', (request, response, next) => {
+app.get('/', (request, response) => {
     console.log(request)
-    return response.status(234).send('Bienvenue')
+    return response.status(200).send('Bienvenue')
 
 });
 
