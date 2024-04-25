@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react'; // Import de React et useEff
 import AjouterBenef from '../beneficiaire/ajouterBenef'; // Import du composant AjouterBenef
 import Beneficiaire from '../beneficiaire/beneficiaire'; // Import du composant Beneficiaire
 import RensezVous from '../rendezvous/rendezvoux';
-import Logout from '../user/logout'; // Import du composant Logout
 import AfficherUser from '../user/user'; // Import du composant AfficherUser
 import AjouterVirement from '../virement/ajouterVirement'; // Import du composant AjouterVirement
 import Virement from '../virement/virement'; // Import du composant Virement
@@ -105,18 +104,7 @@ const Solde = () => {
         </div>
       </div>
       <header className="navbar">
-        <div className="logo">
-          <span className="logo-text"><h2>E-Bank</h2></span>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#App.js">Accueil</a></li>
-            <li><a href="#nousDecouvrir">Nous Découvrir</a></li>
-            <li><a href="#nosServices">Nos Services</a></li>
-            <li><a href="#nouContacter">Nous Contacter</a></li>
-            <Logout /> {/* Bouton de déconnexion */}
-          </ul>
-        </nav>
+        
       </header>
       <main>
         <div className='compte-container'>
