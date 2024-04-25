@@ -6,7 +6,6 @@ import authRouter from "./routes/auths.js";
 import benefRouter from "./routes/benefs.js";
 import rendezVousRouter from './routes/rendezVouss.js';
 import soldeRouter from "./routes/soldes.js";
-import userRouter from "./routes/users.js";
 import virementRouter from "./routes/virements.js";
 
 dotenv.config();
@@ -42,7 +41,7 @@ app.get('/', (request, response) => {
 app.use('/auth', authRouter);
 
 // Routes utilisateur
-app.use('/user', userRouter);
+//app.use('/user', userRouter);
 
 // Routes bénéficiaire
 app.use('/beneficiaire', benefRouter);
