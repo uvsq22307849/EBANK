@@ -64,7 +64,7 @@ const Login = ({ destination = 'login' }) => {
                         <li><a href="#nousDecouvrir">Nous Découvrir</a></li>
                         <li><a href="#nosServices">Nos Services</a></li>
                         <li><a href="#nouContacter">Nous Contacter</a></li>
-                        <li className="nav-item"><a href="" className="filled-button">Déja Client</a></li>
+                        <li className="nav-item"><Link to="/login" className="filled-button"> Déjà client</Link></li>
                     </ul>
                 </nav>
             </header>

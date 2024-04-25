@@ -96,7 +96,7 @@ const Register = ({ destination = 'register' }) => {
             <li><a href="#">Découvrir</a></li>
             <li><a href="#">Nos Services</a></li>
             <li><a href="#">Nous Contacter</a></li>
-            <li className="nav-item"><a href="http://localhost:5173/login" className="filled-button">Déja Client</a></li>
+            <li className="nav-item"><Link to="/login" className="filled-button"> Déjà client</Link></li>
           </ul>
         </nav>
       </header>
