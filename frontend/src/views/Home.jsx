@@ -6,10 +6,12 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import '../App.css';
 
-
-const Home = () => {
+const Home = ({ destination = '/' }) => {
     return (
         <div>
+            <Link
+        to={destination}
+      ></Link>
         <div>
           <div className="work-hours">
           <FontAwesomeIcon icon={faClock} />
@@ -20,7 +22,7 @@ const Home = () => {
         </div>
         <header className="navbar">
           <div className="logo">
-            <span className="logo-text"><h2>E-Bank</h2></span>
+            <span className="logo-text"><Link to="/"><h2>E-Bank</h2></Link></span>
           </div>
           <nav>
             <ul>

@@ -56,7 +56,7 @@ const Login = ({ destination = 'login' }) => {
             </div>
             <header className="navbar">
                 <div className="logo">
-                    <span className="logo-text"><h2>E-Bank</h2></span>
+                    <span className="logo-text"><Link to="/"><h2>E-Bank</h2></Link></span>
                 </div>
                 <nav>
                     <ul>
