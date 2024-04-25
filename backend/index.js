@@ -1,25 +1,28 @@
-import cors from "cors";
-import dotenv from "dotenv";
-import express from "express";
-import helmet from "helmet";
-import mongoose from "mongoose";
-import authRouter from "./routes/auths.js";
-import benefRouter from "./routes/benefs.js";
-import rendezVousRouter from './routes/rendezVouss.js';
-import soldeRouter from "./routes/soldes.js";
-import virementRouter from "./routes/virements.js";
-
-dotenv.config();
-
+// import cors from "cors";
+// import dotenv from "dotenv";
+// import express from "express";
+// import helmet from "helmet";
+// import mongoose from "mongoose";
+// import authRouter from "./routes/auths.js";
+// import benefRouter from "./routes/benefs.js";
+// import rendezVousRouter from './routes/rendezVouss.js';
+// import soldeRouter from "./routes/soldes.js";
+// import virementRouter from "./routes/virements.js";
+const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
-app.use(helmet());
-app.use(cors({
-    origin: ["https://ebank-back.vercel.app/", "https://ebank-beta.vercel.app/", "https://localhost:5555/", "https://localhost:5173/"],
-    methods: ["POST", "GET", "PATCH"],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    preflightContinue: false,
-}));
+require('dotenv').config();
+//dotenv.config();
+
+// const app = express();
+// app.use(helmet());
+// app.use(cors({
+//     origin: ["https://ebank-back.vercel.app/", "https://ebank-beta.vercel.app/", "https://localhost:5555/", "https://localhost:5173/"],
+//     methods: ["POST", "GET", "PATCH"],
+//     credentials: true,
+//     allowedHeaders: ['Content-Type', 'Authorization'],
+//     preflightContinue: false,
+// }));
 //app.use(cors());
 // app.use(cors({
 //     origin: ["https://ebank-api.vercel.app","https://ebank-beta.vercel.app/", "http://localhost:5555", "http://localhost:5173"],
@@ -38,23 +41,23 @@ app.get('/', (request, response) => {
 
 });
 
-// Authentification
-app.use('/auth', authRouter);
+// // Authentification
+// app.use('/auth', authRouter);
 
-// Routes utilisateur
-app.use('/user', userRouter);
+// // Routes utilisateur
+// app.use('/user', userRouter);
 
-// Routes bénéficiaire
-app.use('/beneficiaire', benefRouter);
+// // Routes bénéficiaire
+// app.use('/beneficiaire', benefRouter);
 
-// Routes solde
-app.use('/solde', soldeRouter);
+// // Routes solde
+// app.use('/solde', soldeRouter);
 
-// Routes virement
-app.use('/virement', virementRouter);
+// // Routes virement
+// app.use('/virement', virementRouter);
 
-// Routes rendez vous
-app.use('/rendezVous', rendezVousRouter);
+// // Routes rendez vous
+// app.use('/rendezVous', rendezVousRouter);
 
 
 // Connexion à MongoDB
