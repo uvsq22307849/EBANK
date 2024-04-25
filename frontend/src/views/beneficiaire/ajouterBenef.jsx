@@ -29,7 +29,7 @@ const AjouterBenef = ({ destination = 'ajouterBenef' }) => {
     if (token) {
       // Requête HTTP pour ajouter un bénéficiaire
       axios
-        .post('http://localhost:5555/beneficiaire/ajouterBenef', data, {
+        .post('https://ebank-back.vercel.app/beneficiaire/ajouterBenef', data, {
           headers: {
             Authorization: `Bearer ${token}`, // Inclure le token dans l'en-tête de la requête
           },

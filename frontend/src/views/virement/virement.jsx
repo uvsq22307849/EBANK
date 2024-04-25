@@ -12,7 +12,7 @@ const Virement = ({ destination = 'transactions' }) => {
     useEffect(() => {
         if (token) { // Vérifier si le token existe avant de faire la requête
             axios
-                .get(`http://localhost:5555/virement/afficherVirement`, {
+                .get(`https://ebank-back.vercel.app/virement/afficherVirement`, {
                     headers: {
                         Authorization: `Bearer ${token}`, // Inclure le token dans l'en-tête de la requête
                     },

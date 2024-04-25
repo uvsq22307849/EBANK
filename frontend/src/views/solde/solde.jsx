@@ -24,7 +24,7 @@ const Solde = () => {
     setDate(currentDate);
     if (token) { // Vérifier si le token existe avant de faire la requête
       axios
-        .get('http://localhost:5555/solde/afficherSolde', {
+        .get('https://ebank-back.vercel.app/solde/afficherSolde', {
           headers: {
             Authorization: `Bearer ${token}`, // Inclure le token dans l'en-tête de la requête
           },

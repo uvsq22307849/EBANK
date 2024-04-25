@@ -16,7 +16,7 @@ const AjouterVirement = ({ destination = 'ajouterBenef' }) => {
             try {
                 const token = localStorage.getItem('token');
                 if (token) {
-                    const response = await axios.get('http://localhost:5555/virement/afficherBenefListe', {
+                    const response = await axios.get('https://ebank-back.vercel.app/virement/afficherBenefListe', {
                         headers: {
                             Authorization: `Bearer ${token}`
                         }

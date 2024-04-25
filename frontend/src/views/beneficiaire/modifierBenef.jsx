@@ -17,7 +17,7 @@ const ModifierBenef = () => {
   useEffect(() => {
     if (token) { // Vérifier si le token existe avant de faire la requête
       axios
-        .get(`http://localhost:5555/beneficiaire/detailBenef/${id}`, {
+        .get(`https://ebank-back.vercel.app/beneficiaire/detailBenef/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`, // Inclure le token dans l'en-tête de la requête
           },
@@ -48,7 +48,7 @@ const ModifierBenef = () => {
 
     if (token) { // Vérifier si le token existe avant d'envoyer la requête
       axios
-        .put(`http://localhost:5555/beneficiaire/modifierBenef/${id}`, data, { // Requête PUT pour modifier le bénéficiaire avec l'identifiant spécifié
+        .put(`https://ebank-back.vercel.app/beneficiaire/modifierBenef/${id}`, data, { // Requête PUT pour modifier le bénéficiaire avec l'identifiant spécifié
           headers: {
             Authorization: `Bearer ${token}`, // Inclure le token dans l'en-tête de la requête
           },

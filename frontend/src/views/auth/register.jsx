@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import de F
 import axios from 'axios'; // Import d'axios pour les requêtes HTTP
 import { useSnackbar } from 'notistack'; // Import de useSnackbar pour afficher des notifications
 import React, { useState } from "react"; // Import de useState pour gérer les états
-import { useNavigate } from 'react-router-dom'; // Import de useNavigate pour la navigation
+import { Link, useNavigate } from 'react-router-dom'; // Import de useNavigate pour la navigation
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import '../../App.css'; // Import des styles CSS
 
 // Composant Register
-const Register = () => {
+const Register = ({ destination = 'register' }) => {
   // Déclaration des états pour les champs du formulaire
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -60,7 +60,7 @@ const Register = () => {
 
     // Requête HTTP pour l'inscription
     axios
-      .post('http://localhost:5555/auth/register', data)
+      .post('https://ebank-back.vercel.app/auth/register', data)
       .then(() => {
         // En cas de succès, afficher une notification et rediriger vers la page de connexion
         enqueueSnackbar('Utilisateur créé avec succès', { variant: 'success' });
@@ -75,6 +75,9 @@ const Register = () => {
   return (
 
     <div>
+      <Link
+        to={destination}
+      ></Link>
       <div>
         <div className="work-hours">
           <FontAwesomeIcon icon={faClock} />

@@ -36,7 +36,7 @@ const Home = () => {
         <div className="background-image">
           <div className="text-container">
             <h2>La rapidité à portée de clic avec E-Bank</h2>
-              <a href="/register" className="filled-button">Devenir client</a>
+            <Link to="/register" className="filled-button"> Devenir client </Link>
           </div>
         </div>
       <br></br>
@@ -75,50 +75,6 @@ const Home = () => {
                   <p>Découvrez nos solutions d'épargne et de prêt flexibles pour façonner un avenir financier plus prometteur. Économisez en toute sécurité et accédez rapidement aux fonds dont vous avez besoin pour concrétiser vos projets. Explorez nos options dès aujourd'hui !</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="contact-form">
-        <div className="container">
-          <div className="section-heading">
-            <h2>Nous <em>Contacter</em></h2>
-          </div>
-          <div className="row">
-            <div className="col-md-6">
-              <form id="contact" action="" method="post">
-                <div className="row">
-                  <div className="col-md-12">
-                    <fieldset>
-                      <input name="name" type="text" className="form-control" id="name" placeholder="Votre Nom" required=""/>
-                    </fieldset>
-                  </div>
-                  <div className="col-md-12">
-                    <fieldset>
-                      <input
-                        name="email"
-                        type="text"
-                        className="form-control"
-                        id="email" placeholder="Votre Adresse Email" required=""/>
-                    </fieldset>
-                  </div>
-                  <div className="col-md-12">
-                    <fieldset>
-                      <textarea
-                        name="message" rows="6" className="form-control" id="message" placeholder="Votre Message" required=""
-                      ></textarea>
-                    </fieldset>
-                  </div>
-                  <div className="col-md-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" className="filled-button">
-                        Envoyer
-                      </button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
             </div>
           </div>
         </div>

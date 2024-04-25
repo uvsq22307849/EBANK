@@ -10,7 +10,7 @@ const Logout = ({ destination = '/' }) => {
     // Fonction pour gérer la déconnexion
     const handleLogout = async () => {
         try {
-            await axios.post('http://localhost:5555/user/logout'); // Requête POST pour se déconnecter
+            await axios.post('https://ebank-back.vercel.app/user/logout'); // Requête POST pour se déconnecter
             localStorage.removeItem('token'); // Supprimer le token JWT du stockage local
             // Rediriger l'utilisateur vers la page spécifiée dans la propriété "destination" ou vers la page d'accueil par défaut
             window.location.href = destination;

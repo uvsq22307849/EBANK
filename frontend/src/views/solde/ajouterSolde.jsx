@@ -18,7 +18,7 @@ const AjouterSolde = ({ destination = 'ajouterSolde' }) => {
         };
         if (token) { // Vérifier si le token existe
             axios
-                .put('http://localhost:5555/solde/ajouterSolde', data, { // Requête PUT pour ajouter du solde
+                .put('https://ebank-back.vercel.app/solde/ajouterSolde', data, { // Requête PUT pour ajouter du solde
                     headers: {
                         Authorization: `Bearer ${token}`, // Inclure le token dans l'en-tête de la requête
                     },

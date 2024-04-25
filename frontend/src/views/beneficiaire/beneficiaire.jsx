@@ -15,7 +15,7 @@ const Beneficiaire = ({ destination = 'beneficiaire' }) => {
     useEffect(() => {
         if (token) { // Vérifier si le token existe avant de faire la requête
             axios
-                .get(`http://localhost:5555/beneficiaire/afficherBenef`, {
+                .get(`https://ebank-back.vercel.app/beneficiaire/afficherBenef`, {
                     headers: {
                         Authorization: `Bearer ${token}`, // Inclure le token dans l'en-tête de la requête
                     },
