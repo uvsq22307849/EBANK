@@ -31,7 +31,7 @@ const RensezVous = ({ destination = 'rdv' }) => {
         };
         if (token) {
             axios
-                .post('http://localhost:5555/rendezVous/ajouterRendezvous', data, {
+                .post('https://ebank-back.vercel.app/rendezVous/ajouterRendezvous', data, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
