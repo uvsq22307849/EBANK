@@ -26,7 +26,8 @@ const AjouterSolde = ({ destination = 'ajouterSolde' }) => {
                 .then(() => {
                     enqueueSnackbar('Solde ajouté avec succès', { variant: 'success' }); // Afficher une notification de succès
                     window.location.reload(); // Recharger la page pour afficher les mises à jour
-                    navigate('/solde'); // Rediriger l'utilisateur vers la page des soldes
+                    //navigate('/solde'); // Rediriger l'utilisateur vers la page des soldes
+                    <Link to="/solde" ></Link>
                 })
                 .catch((error) => {
                     enqueueSnackbar('Erreur lors de l\'ajout du solde', { variant: 'error' }); // Afficher une notification d'erreur en cas d'échec

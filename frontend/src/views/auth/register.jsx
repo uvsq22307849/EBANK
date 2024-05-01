@@ -48,15 +48,15 @@ const Register = ({ destination = 'register' }) => {
     }
 
     // Vérifier que le mot de passe est fort
-    if (!isStrongPassword(password)) {
-      enqueueSnackbar("Le mot de passe doit contenir au moins 8 caractères, y compris au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial", { variant: "error" });
-      return;
-    }
+    // if (!isStrongPassword(password)) {
+    //   enqueueSnackbar("Le mot de passe doit contenir au moins 8 caractères, y compris au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial", { variant: "error" });
+    //   return;
+    // }
 
-    if (password !== verifyPassword) {
-      enqueueSnackbar("Le mot de passe et la vérification du mot de passe ne correspondent pas", { variant: "error" });
-      return;
-    }
+    // if (password !== verifyPassword) {
+    //   enqueueSnackbar("Le mot de passe et la vérification du mot de passe ne correspondent pas", { variant: "error" });
+    //   return;
+    // }
 
     // Requête HTTP pour l'inscription
     axios

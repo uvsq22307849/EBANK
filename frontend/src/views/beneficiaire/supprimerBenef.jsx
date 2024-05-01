@@ -1,28 +1,48 @@
-import { useSnackbar } from 'notistack'; // Import de useSnackbar pour afficher des notifications
-import React, { useEffect, useState } from 'react'; // Import de React, useEffect et useState pour gérer les effets et les états
-import { useNavigate, useParams } from 'react-router-dom'; // Import de useNavigate et useParams pour la navigation et les paramètres d'URL
+import axios from 'axios';
+import { useSnackbar } from 'notistack';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import BackButton from '../../components/BackButton';
 
 // Composant SupprimerBenef
 const SupprimerBenef = () => {
-    const navigate = useNavigate(); // Hook de navigation
-    const { id } = useParams(); // Récupérer l'identifiant du bénéficiaire depuis les paramètres d'URL
-    const { enqueueSnackbar } = useSnackbar(); // Hook pour afficher des notifications
-    const [token, setToken] = useState(''); // État pour stocker le token JWT
+    const navigate = useNavigate();
+    const { id } = useParams();
+    const { enqueueSnackbar } = useSnackbar();
+    const [token, setToken] = useState('');
 
     // Effet pour vérifier si l'utilisateur est connecté au chargement du composant
     useEffect(() => {
-        const storedToken = localStorage.getItem('token'); // Récupérer le token JWT du stockage local
-        if (!storedToken) { // Si le token n'existe pas
-            enqueueSnackbar('Vous devez être connecté pour effectuer cette action', { variant: 'error' }); // Afficher une notification d'erreur
-            navigate('/login'); // Rediriger vers la page de connexion
-        } else { // Si le token existe
-            setToken(storedToken); // Mettre à jour l'état du token avec la valeur récupérée
+        const storedToken = localStorage.getItem('token');
+        if (!storedToken) {
+            enqueueSnackbar('Vous devez être connecté pour effectuer cette action', { variant: 'error' });
+            navigate('/login');
+        } else {
+            setToken(storedToken);
         }
-    }, [enqueueSnackbar, navigate]); // Exécuter l'effet uniquement lors du chargement du composant ou lorsque les dépendances changent
+    }, [enqueueSnackbar, navigate]);
+
+    const handleSupprimerBenef = () => {
+        axios
+            .delete(`https://ebank-back.vercel.app/beneficiaire/supprimerBenef/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            .then(() => {
+                enqueueSnackbar('Bénéficiaire supprimé avec succès', { variant: 'success' });
+                navigate('/beneficiaire');
+            })
+            .catch((error) => {
+                enqueueSnackbar('Erreur lors de la suppression du bénéficiaire', { variant: 'error' });
+                console.log(error);
+            });
+    };
 
     return (
-
-        <div className="modal fade" id="profilModal" tabIndex="-1" role="dialog" aria-labelledby="profilModalLabel" aria-hidden="true">
+        <div className='p-4'>
+            <BackButton />
+            <div className="modal fade" id="profilModal" tabIndex="-1" role="dialog" aria-labelledby="profilModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
@@ -31,6 +51,7 @@ const SupprimerBenef = () => {
                         <button type="button" onClick={handleSupprimerBenef} className="filled-button-secondary" data-dismiss="modal"> Oui, supprimer</button>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );

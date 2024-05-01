@@ -39,7 +39,6 @@ const RensezVous = ({ destination = 'rdv' }) => {
                 .then(() => {
                     enqueueSnackbar('Rendez-vous ajouté avec succès', { variant: 'success' });
                     window.location.reload();
-                    navigate('/solde');
                 })
                 .catch((error) => {
                     enqueueSnackbar('Erreur lors de l\'ajout du rendez-vous', { variant: 'error' });
@@ -60,8 +59,6 @@ const RensezVous = ({ destination = 'rdv' }) => {
             </div>
             <div className="button-container">
                 <button className="filled-button" onClick={() => { handleAjouterRendezVous(); toggleAppointmentForm(); }}>Valider</button>
-                <button  onClick={() => navigate('/solde')}>Annuler</button>
-
             </div>
         </div>
     );
