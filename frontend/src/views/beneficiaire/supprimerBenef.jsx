@@ -31,7 +31,7 @@ const SupprimerBenef = () => {
             })
             .then(() => {
                 enqueueSnackbar('Bénéficiaire supprimé avec succès', { variant: 'success' });
-                navigate('/beneficiaire');
+                navigate('/solde');
             })
             .catch((error) => {
                 enqueueSnackbar('Erreur lors de la suppression du bénéficiaire', { variant: 'error' });
