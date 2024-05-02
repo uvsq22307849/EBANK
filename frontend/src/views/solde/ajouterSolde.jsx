@@ -31,8 +31,6 @@ const AjouterSolde = ({ destination = 'ajouterSolde' }) => {
                     enqueueSnackbar('Erreur lors de l\'ajout du solde', { variant: 'error' }); // Afficher une notification d'erreur en cas d'échec
                     console.log(error); // Log de l'erreur dans la console
                 });
-            setMontant('');
-            alert('Solde ajouté avec succès');
         }
     };
     return (
