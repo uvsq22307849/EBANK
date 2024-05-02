@@ -25,7 +25,7 @@ app.use(cors({
 app.use(express.json());
 
 // Route principale avec un message de bienvenue
-app.get('/', (request, response) => {
+app.get('/*', (request, response) => {
     console.log(request)
     return response.status(200).send('Bienvenue')
 
