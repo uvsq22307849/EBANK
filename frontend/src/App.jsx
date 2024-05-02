@@ -27,9 +27,9 @@ const App = () => {
     <Routes>
       {/* Routes pour chaque vue */}
       <Route path='/' element={<Home />} /> {/* Route pour la page d'accueil */}
-      <Route path='https://ebank-beta.vercel.app/auth/register' element={<Register />} /> {/* Route pour l'inscription */}
+      <Route path='/register' element={<Register />} /> {/* Route pour l'inscription */}
 
-      <Route path='user/login' element={<Login />} /> {/* Route pour la connexion */}
+      <Route path='/login' element={<Login />} /> {/* Route pour la connexion */}
       <Route path='/logout' element={<Logout />} /> {/* Route pour la déconnexion */}
       <Route path='/user' element={<AfficherUser />} /> {/* Route pour afficher les informations de l'utilisateur */}
 
