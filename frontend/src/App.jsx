@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from 'react-router-dom'; // Import des composants Route et Routes de react-router-dom
-import Home from './views/Home'; // Import du composant Home
+import Home from './views/index'; // Import du composant Home
 import Register from './views/auth/register'; // Import du composant Register pour l'inscription
 
 import Login from "./views/user/login"; // Import du composant Login pour la connexion
