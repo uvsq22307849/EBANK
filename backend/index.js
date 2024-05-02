@@ -1,7 +1,7 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-import helmet from "helmet";
+//import helmet from "helmet";
 import mongoose from "mongoose";
 import authRouter from "./routes/auths.js";
 import benefRouter from "./routes/benefs.js";
@@ -13,7 +13,7 @@ import virementRouter from "./routes/virements.js";
 dotenv.config();
 
 const app = express();
-app.use(helmet());
+//app.use(helmet());
 app.use(cors({
     origin: ["https://ebank-back.vercel.app", "https://ebank-beta.vercel.app", "http://localhost:5555", "http://localhost:5173"],
     methods: ["POST", "GET" ,"PUT","DELETE"],
