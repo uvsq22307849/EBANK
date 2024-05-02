@@ -22,17 +22,15 @@ const AjouterSolde = ({ destination = 'ajouterSolde' }) => {
                     headers: {
                         Authorization: `Bearer ${token}`, // Inclure le token dans l'en-tête de la requête
                     },
-                })
-                .then(() => {
-                    enqueueSnackbar('Solde ajouté avec succès', { variant: 'success' }); // Afficher une notification de succès
-                    window.location.reload(); // Recharger la page pour afficher les mises à jour
-                    //navigate('/solde'); // Rediriger l'utilisateur vers la page des soldes
-                    <Link to="/solde" ></Link>
+                
+                    
                 })
                 .catch((error) => {
                     enqueueSnackbar('Erreur lors de l\'ajout du solde', { variant: 'error' }); // Afficher une notification d'erreur en cas d'échec
                     console.log(error); // Log de l'erreur dans la console
                 });
+                setMontant('');
+                alert('Solde ajouté avec succès');
         }
     };
     return (
