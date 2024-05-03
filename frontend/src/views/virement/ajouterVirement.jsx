@@ -57,7 +57,7 @@ const AjouterVirement = ({ destination = 'ajouterBenef' }) => {
             const token = localStorage.getItem('token');
             if (token) {
                 await axios
-                    .post('http://localhost:5555/virement/ajouterVirement', {
+                    .post('https://ebank-back.vercel.app/virement/ajouterVirement', {
                         montant,
                         motif,
                         beneficiaireId: selectedBeneficiaire
