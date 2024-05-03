@@ -72,10 +72,6 @@ const AjouterVirement = ({ destination = 'ajouterBenef' }) => {
                         window.location.reload(); // Recharger la page pour afficher les mises à jour
                         navigate('/solde'); // Rediriger l'utilisateur vers la page des soldes
                     })
-                    .catch((error) => {
-                        enqueueSnackbar('Erreur lors de l\'ajout du Virement', { variant: 'error' }); // Afficher une notification d'erreur en cas d'échec
-                        console.log(error); // Log de l'erreur dans la console
-                    });
             }
         } catch (error) {
             console.log(error); // Log de l'erreur dans la console en cas d'exception
