@@ -36,13 +36,17 @@ const RensezVous = ({ destination = 'rdv' }) => {
                         Authorization: `Bearer ${token}`,
                     },
                 })
+                .then(() => {
+                    enqueueSnackbar('Rendez-vous ajouté avec succès', { variant: 'success' });
+                    window.location.reload();
+                    navigate('/solde');
+                })
                 
                 .catch((error) => {
                     enqueueSnackbar('Erreur lors de l\'ajout du rendez-vous', { variant: 'error' });
                     console.log(error);
                 });
 
-                alert('Rendez vous ajouté avec succès');
         }
     };
 

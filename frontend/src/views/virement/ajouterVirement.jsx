@@ -1,6 +1,8 @@
 import axios from 'axios'; // Import d'axios pour les requêtes HTTP
+import { useSnackbar } from 'notistack'; // Import de useSnackbar pour afficher des notifications
 import React, { useEffect, useState } from 'react'; // Import de React, useEffect et useState
 import { Link } from 'react-router-dom'; // Import de Link pour la navigation dans l'application
+
 
 // Composant AjouterVirement
 const AjouterVirement = ({ destination = 'ajouterBenef' }) => {
@@ -9,6 +11,7 @@ const AjouterVirement = ({ destination = 'ajouterBenef' }) => {
     const [motif, setMotif] = useState('');
     const [beneficiaires, setBeneficiaires] = useState([]);
     const [selectedBeneficiaire, setSelectedBeneficiaire] = useState('');
+    const { enqueueSnackbar } = useSnackbar(); // Hook pour afficher des notifications
 
     // Effet pour récupérer la liste des bénéficiaires lors du chargement du composant
     useEffect(() => {
@@ -53,27 +56,32 @@ const AjouterVirement = ({ destination = 'ajouterBenef' }) => {
         try {
             const token = localStorage.getItem('token');
             if (token) {
-                await axios.post('http://localhost:5555/virement/ajouterVirement', {
-                    montant,
-                    motif,
-                    beneficiaireId: selectedBeneficiaire
-                }, {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-
-                // Réinitialiser les champs du formulaire après une soumission réussie
-                setMontant('');
-                setMotif('');
-                setSelectedBeneficiaire('');
-                alert('Virement créé avec succès'); // Afficher une alerte pour indiquer que le virement a été créé avec succès
+                await axios
+                    .post('http://localhost:5555/virement/ajouterVirement', {
+                        montant,
+                        motif,
+                        beneficiaireId: selectedBeneficiaire
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    })
+                    .then(() => {
+                        enqueueSnackbar('Virement ajouté avec succès', { variant: 'success' }); // Afficher une notification de succès
+                        window.location.reload(); // Recharger la page pour afficher les mises à jour
+                        navigate('/solde'); // Rediriger l'utilisateur vers la page des soldes
+                    })
+                    .catch((error) => {
+                        enqueueSnackbar('Erreur lors de l\'ajout du Virement', { variant: 'error' }); // Afficher une notification d'erreur en cas d'échec
+                        console.log(error); // Log de l'erreur dans la console
+                    });
             }
         } catch (error) {
-            console.error(error); // Afficher l'erreur dans la console en cas d'échec de la requête
-            alert('Erreur lors de la création du virement'); // Afficher une alerte pour indiquer qu'une erreur s'est produite lors de la création du virement
+            console.log(error); // Log de l'erreur dans la console en cas d'exception
         }
     };
+
     return (
         <div className="modal fade" id="popup-virement" tabIndex="-1" role="dialog">
             <Link
