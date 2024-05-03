@@ -26,10 +26,7 @@ const Home = ({ destination = '/' }) => {
           </div>
           <nav>
             <ul>
-              <li><a href="#">Accueil</a></li>
-              <li><a href="#">Découvrir</a></li>
-              <li><a href="#">Nos Services</a></li>
-              <li><a href="#">Nous Contacter</a></li>
+              
               <li className="nav-item"><Link to="/login" className="filled-button"> Déja Client </Link></li>
             </ul>
           </nav>

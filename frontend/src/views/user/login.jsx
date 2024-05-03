@@ -113,6 +113,9 @@ const Login = ({ destination = 'login' }) => {
                     </div>
                 </div>
             </main>
+            <footer>
+                <p>&copy; 2024 E-Bank. Tous droits réservés.</p>
+            </footer>
         </div>
     );
 }
